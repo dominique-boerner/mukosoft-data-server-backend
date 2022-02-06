@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <PRODUCT xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://wiki.oddb.org/wiki.php?pagename=Swissmedic.Datendeklaration" CREATION_DATETIME="2021-12-15T06:30:42+0100" PROD_DATE="2021-12-15T06:30:42+0100" VALID_DATE="2021-12-15T06:30:42+0100" GENERATED_BY="oddb2xml 2.7.4">
   <PRD DT="" SHA256="ab1c828c601e851189e8b91c41dcc377589bc1a9303e18c3fa90078f8e09cc50">
     <GTIN>7680006020023</GTIN>
