@@ -1,27 +1,12 @@
-import {parse, Router} from "./deps.ts";
+import {Router} from "./deps.ts";
+import Medication from "./api/v1/medication.ts";
 
 const router = new Router();
 
-const file = await Deno.open("./resources/medication/oddb_product_test.xml");
-const {size} = await file.stat();
+console.debug("**** Parsing data ... ****");
 
-const startTime = new Date().getTime();
-const medication = await parse(file, {
-  progress(bytes) {
-    console.debug(
-        Deno.stdout.writeSync(
-            new TextEncoder().encode(
-                `Parsing Medication: ${(100 * bytes / size).toFixed(2)}%\r`
-            )
-        ))
-  },
-});
-const endTime = new Date().getTime();
-const diffMs = endTime - startTime;
-
-const seconds = diffMs / 1000;
-
-console.log(`Finished parsing Medications in ${seconds} seconds.`)
+const medication = await new Medication();
+medication.parseFile();
 
 router.get("/api/v1/medication", (context) => {
   context.response.body = {
