@@ -5,7 +5,7 @@ import DsddbService from "./services/dsddb-service.ts";
 console.debug("**** Application Start ****");
 
 const index = new Application();
-const host = "localhost";
+const host = "0.0.0.0";
 const port = "9000";
 
 console.debug("**** Loading stores ... ****");
