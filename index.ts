@@ -1,4 +1,4 @@
-import {Application} from "./deps.ts";
+import {Application, oakCors} from "./deps.ts";
 import router from "./router.ts";
 import DsddbService from "./services/dsddb-service.ts";
 
@@ -15,6 +15,9 @@ await dsdbbService.getRecipeStore().load().then(() => console.debug("Recipe stor
 await dsdbbService.getMedicationStore().load().then(() => console.debug("Medication store loaded"));
 
 index.use(router.routes());
+index.use(oakCors({
+  origin: "*"
+}))
 index.listen(`${host}:${port}`);
 
 console.debug(`**** Server ist listening on ${host}:${port} ****`);
